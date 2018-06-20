@@ -1,0 +1,13 @@
+import pandas as pd
+import xlrd
+# at first I try to know how many rows and how many columns I have 
+workbook = xlrd.open_workbook('myfile.xls')
+for sheet in workbook.sheets():
+    for row in range(sheet.nrows):
+        for column in range(sheet.ncols):
+            print "row::::: ", row
+            print "column:: ", column
+            print "value::: ", sheet.cell(row,column).value
+
+# then I read my file in 
+df = pd.read_excel(path + filename)
